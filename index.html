@@ -1,11 +1,31 @@
+Created index.html
 
+I have added the **GCash Gift** feature! 
+
+### What Was Added:
+- 🎁 **"Send GCash Gift" Button**: Prominently added to the hero actions and the wedding details card.
+- 📱 **GCash Blessing Modal**: When clicked, opens a GCash card displaying your **GCash Mobile Number** and **Account Name**.
+- 📋 **1-Click "Copy GCash Number" Button**: Guests can tap one button to copy the number straight to their clipboard with instant confirmation ("✅ Copied to Clipboard!").
+- ⚙️ **Customizable**: In the "Customize" drawer, you can change your GCash number and account name anytime.
+
+---
+
+### How to Update GitHub:
+1. Click the **"Copy"** button at the top right of the code block below.
+2. Open your GitHub editor: 👉 **[Edit index.html on GitHub](https://github.com/Wel092996/WEDDING-INVITATION-/edit/main/index.html)**
+3. Press **`Ctrl + A`** to select everything, then **`Ctrl + V`** to paste this code.
+4. Click the green **"Commit changes"** button at the bottom.
+
+---
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wedding Invitation | Sarah & Alexander</title>
-  <meta name="description" content="Wedding Celebration of Sarah & Alexander. Join us on our special day.">
+  <title>Wedding Invitation | Mailyn & Roel</title>
+  <meta name="description" content="Wedding Celebration of Mailyn Bio & Roel Barrameda. Join us on our special day.">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -210,7 +230,7 @@
 
     .couple-names {
       font-family: var(--font-script);
-      font-size: 4rem;
+      font-size: 4.2rem;
       line-height: 1.15;
       color: var(--text-primary);
       margin: 8px 0;
@@ -270,19 +290,27 @@
       margin-top: 4px;
     }
 
-    .wedding-location .venue-title {
+    .wedding-locations-block {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+    }
+    .location-box { max-width: 480px; }
+    .location-label {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      margin-bottom: 2px;
+    }
+    .location-title {
       font-family: var(--font-serif);
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       font-weight: 600;
       color: var(--text-primary);
-    }
-    .wedding-location .venue-city {
-      font-family: var(--font-sans);
-      font-size: 0.8rem;
-      color: var(--text-secondary);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-top: 4px;
     }
 
     /* --- COUNTDOWN TIMER --- */
@@ -329,14 +357,14 @@
     .invitation-actions {
       display: flex;
       justify-content: center;
-      gap: 14px;
+      gap: 12px;
       margin-top: 36px;
       flex-wrap: wrap;
     }
     .btn-luxury {
       background: var(--accent);
       color: #ffffff;
-      padding: 12px 30px;
+      padding: 12px 28px;
       border-radius: 30px;
       font-family: var(--font-sans);
       font-size: 0.75rem;
@@ -379,6 +407,19 @@
       border-color: var(--accent);
       color: var(--accent);
       background: var(--bg-surface);
+    }
+
+    /* Special Gift Button */
+    .btn-gift {
+      background: #007dfe;
+      color: #ffffff;
+      border: 1px solid #007dfe;
+      box-shadow: 0 4px 15px rgba(0, 125, 254, 0.25);
+    }
+    .btn-gift:hover {
+      background: #0060c4;
+      border-color: #0060c4;
+      transform: translateY(-2px);
     }
 
     /* --- SCHEDULE & DETAILS --- */
@@ -558,7 +599,7 @@
     }
     .form-control {
       width: 100%;
-      padding: 9px 12px;
+      padding: 10px 12px;
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: 4px;
@@ -568,6 +609,63 @@
       outline: none;
     }
     .form-control:focus { border-color: var(--accent); }
+    textarea.form-control { resize: vertical; }
+
+    /* --- GCASH GIFT CARD STYLING --- */
+    .gcash-card {
+      background: linear-gradient(135deg, #005ce6 0%, #0088ff 100%);
+      color: #ffffff;
+      border-radius: 12px;
+      padding: 22px;
+      text-align: center;
+      margin: 18px 0;
+      box-shadow: 0 10px 24px rgba(0, 106, 255, 0.25);
+    }
+    .gcash-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .gcash-number-display {
+      font-family: var(--font-title);
+      font-size: 1.6rem;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      margin: 6px 0;
+    }
+    .gcash-name-display {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      opacity: 0.95;
+    }
+    .gcash-copy-btn {
+      background: #ffffff;
+      color: #005ce6;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      margin-top: 14px;
+      transition: all 0.2s ease;
+    }
+    .gcash-copy-btn:hover {
+      background: #e6f0ff;
+      transform: scale(1.03);
+    }
 
     /* --- 5x7 PRINTABLE CARD VIEW --- */
     .invitation-card-5x7 {
@@ -577,7 +675,7 @@
       border: 1px solid var(--border-color);
       box-shadow: 0 20px 50px rgba(0,0,0,0.3);
       position: relative;
-      padding: 40px 30px;
+      padding: 38px 28px;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -637,7 +735,7 @@
       .control-bar { height: auto; min-height: 56px; padding: 8px 12px; gap: 6px; }
       .site-wrapper { margin-top: 80px; padding: 0 12px 60px; }
       .hero-card { padding: 36px 16px; }
-      .couple-names { font-size: 2.8rem; }
+      .couple-names { font-size: 3rem; }
       .invitation-card-5x7 { width: 100%; height: auto; min-height: 500px; padding: 24px 16px; }
     }
   </style>
@@ -646,7 +744,7 @@
 
   <!-- TOP BAR -->
   <header class="control-bar">
-    <div class="bar-brand" id="nav-brand-text">Sarah &amp; Alexander &bull; Oct 24, 2026</div>
+    <div class="bar-brand" id="nav-brand-text">Mailyn &amp; Roel &bull; Oct 24, 2026</div>
     <div class="bar-actions">
       <select id="theme-selector" class="theme-dropdown" title="Choose Theme">
         <option value="theme-classic">Theme: Classic Gold</option>
@@ -663,12 +761,12 @@
   <!-- MAIN SITE -->
   <main class="site-wrapper">
     <section class="hero-card">
-      <div class="monogram-badge" id="display-monogram">S &amp; A</div>
+      <div class="monogram-badge" id="display-monogram">M &amp; R</div>
       <div class="invitation-header">Together with their families</div>
       <h1 class="couple-names">
-        <span id="display-bride-name">Sarah Elizabeth Chen</span>
+        <span id="display-bride-name">Mailyn Bio</span>
         <span class="names-connector">&amp;</span>
-        <span id="display-groom-name">Alexander James Ward</span>
+        <span id="display-groom-name">Roel Barrameda</span>
       </h1>
       <p class="invitation-quote">
         request the honour of your presence at the celebration of their marriage as they exchange vows and begin their journey in love.
@@ -682,12 +780,18 @@
 
       <div class="wedding-datetime">
         <div class="date-display" id="display-wedding-date">Saturday, October 24, 2026</div>
-        <div class="time-display" id="display-wedding-time">at Four O'Clock in the Afternoon</div>
+        <div class="time-display" id="display-wedding-time">at Three O'Clock in the Afternoon</div>
       </div>
 
-      <div class="wedding-location">
-        <div class="venue-title" id="display-venue-name">The Glasshouse Estate</div>
-        <div class="venue-city" id="display-venue-city">Napa Valley, California</div>
+      <div class="wedding-locations-block">
+        <div class="location-box">
+          <div class="location-label">Church Ceremony</div>
+          <div class="location-title" id="display-church-name">San Vicente Ferrer Parish</div>
+        </div>
+        <div class="location-box" style="margin-top: 6px;">
+          <div class="location-label">Dinner &amp; Reception</div>
+          <div class="location-title" id="display-venue-name">Casa Ver'Amore</div>
+        </div>
       </div>
 
       <!-- COUNTDOWN -->
@@ -704,9 +808,11 @@
       <!-- ACTIONS -->
       <div class="invitation-actions">
         <button class="btn-luxury" id="btn-open-rsvp">RSVP Online</button>
-        <a href="#" id="cal-google" target="_blank" class="btn-outline">Add to Google Calendar</a>
-        <a href="#" id="cal-ics" class="btn-outline">Download iCal (.ics)</a>
-        <a href="https://maps.google.com/?q=Napa+Valley+California" target="_blank" id="link-map-directions" class="btn-outline">Directions &amp; Map</a>
+        <button class="btn-luxury btn-gift" id="btn-open-gift">
+          🎁 Send GCash Gift
+        </button>
+        <a href="https://maps.google.com/?q=San+Vicente+Ferrer+Parish" target="_blank" id="link-map-church" class="btn-outline">Directions to Church</a>
+        <a href="https://maps.google.com/?q=Casa+Ver%27Amore" target="_blank" id="link-map-venue" class="btn-outline">Directions to Reception</a>
       </div>
     </section>
 
@@ -715,10 +821,26 @@
       <h2 class="section-title">Schedule of Events</h2>
       <p class="section-subtitle">Saturday, October 24, 2026</p>
       <div class="timeline-container">
-        <div class="timeline-item"><div class="timeline-time">4:00 PM</div><h3 class="timeline-title">The Ceremony</h3><p class="timeline-desc">The Conservatory Rose Garden. Please be seated by 3:45 PM.</p></div>
-        <div class="timeline-item"><div class="timeline-time">5:00 PM</div><h3 class="timeline-title">Cocktails &amp; Canap&eacute;s</h3><p class="timeline-desc">Sunset Terrace with live acoustic melodies and open bar.</p></div>
-        <div class="timeline-item"><div class="timeline-time">6:30 PM</div><h3 class="timeline-title">Dinner &amp; Toasts</h3><p class="timeline-desc">The Grand Glass Pavilion. Four-course dining experience.</p></div>
-        <div class="timeline-item"><div class="timeline-time">8:30 PM</div><h3 class="timeline-title">Dancing &amp; Cake</h3><p class="timeline-desc">Starlight Ballroom. Live music until midnight.</p></div>
+        <div class="timeline-item">
+          <div class="timeline-time">3:00 PM</div>
+          <h3 class="timeline-title">The Holy Matrimony</h3>
+          <p class="timeline-desc" id="timeline-church">San Vicente Ferrer Parish. Please arrive and be seated by 2:45 PM.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">5:30 PM</div>
+          <h3 class="timeline-title">Cocktails &amp; Welcome</h3>
+          <p class="timeline-desc" id="timeline-venue">Casa Ver'Amore. Enjoy refreshing drinks and light hors d'oeuvres.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">6:30 PM</div>
+          <h3 class="timeline-title">Dinner &amp; Program</h3>
+          <p class="timeline-desc">Festive dinner banquet, toasts, and cake cutting celebration.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">8:30 PM</div>
+          <h3 class="timeline-title">Party &amp; Dancing</h3>
+          <p class="timeline-desc">Music, celebration, and dancing with family and friends.</p>
+        </div>
       </div>
     </section>
 
@@ -728,38 +850,71 @@
       <p class="section-subtitle">Everything You Need To Know</p>
       <div class="details-grid">
         <div class="detail-card">
-          <h3>Venue &amp; Travel</h3>
-          <p><span class="highlight" id="card-display-venue">The Glasshouse Estate</span></p>
-          <p id="card-display-city">Napa Valley, California</p>
-          <p style="margin-top: 6px; font-size: 0.85rem;">Complimentary valet parking available on site.</p>
+          <h3>Church Ceremony</h3>
+          <p><span class="highlight" id="card-display-church">San Vicente Ferrer Parish</span></p>
+          <p style="margin-top: 6px; font-size: 0.85rem;">Holy Mass and Exchange of Vows</p>
         </div>
         <div class="detail-card">
-          <h3>Dress Code</h3>
-          <p><span class="highlight" id="display-dress-code">Black Tie Optional</span></p>
-          <p style="margin-top: 6px; font-size: 0.85rem;">Tuxedos, dark suits, and elegant floor-length dresses.</p>
+          <h3>Reception Venue</h3>
+          <p><span class="highlight" id="card-display-venue">Casa Ver'Amore</span></p>
+          <p style="margin-top: 6px; font-size: 0.85rem;">Dinner banquet and celebration right after the ceremony.</p>
         </div>
         <div class="detail-card">
-          <h3>Wishing Well</h3>
-          <p><span class="highlight">Your Presence is Our Present</span></p>
-          <p style="margin-top: 6px; font-size: 0.85rem;">A honeymoon wishing well will be available at the reception.</p>
+          <h3>Wedding Gift</h3>
+          <p><span class="highlight">With Sincere Gratitude</span></p>
+          <p style="margin-top: 6px; font-size: 0.85rem;">Your prayers and presence are the greatest gift. If you wish to bless us financially, a GCash gift option is available.</p>
+          <button class="btn-ctrl" id="btn-card-gift" style="margin-top: 10px; color: #007dfe; border-color: #007dfe;">View GCash Details &rarr;</button>
         </div>
       </div>
     </section>
 
     <!-- OUR STORY -->
     <section class="story-section">
-      <h2 class="section-title" style="margin-top: 0;">Our Story</h2>
+      <h2 class="section-title" style="margin-top: 0;">Our Love Story</h2>
       <p class="story-text">
-        "Seven years ago, a serendipitous conversation over coffee sparked an adventure that took us across four continents and endless laughter. On an autumn evening under the stars in Lake Como, Alexander asked, and Sarah said yes. We can't wait to begin our next chapter with you."
+        "Every love story is beautiful, but ours is our favorite. We are overjoyed to take this sacred step together before God, our families, and our dearest friends. Thank you for being a meaningful part of our journey as we begin our forever."
       </p>
     </section>
 
     <footer class="site-footer">
-      <p id="footer-couple-text">Sarah &amp; Alexander &bull; October 24, 2026</p>
+      <p id="footer-couple-text">Mailyn Bio &amp; Roel Barrameda &bull; October 24, 2026</p>
     </footer>
   </main>
 
   <button class="floating-rsvp-btn" id="btn-floating-rsvp">RSVP</button>
+
+  <!-- ==========================================================================
+       GCASH GIFT MODAL
+       ========================================================================== -->
+  <div class="modal-overlay" id="gift-modal-overlay">
+    <div class="modal-box" style="text-align: center;">
+      <button class="modal-close" id="btn-close-gift">&times;</button>
+      
+      <div style="font-size: 2.2rem; margin-bottom: 6px;">🎁</div>
+      <h2 style="font-family: var(--font-title); font-size: 1.3rem; letter-spacing: 0.1em; text-transform: uppercase;">
+        Wedding Gift / Monetary Blessing
+      </h2>
+      <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 8px auto 16px; max-width: 380px; line-height: 1.5;">
+        Your love, presence, and prayers on our special day are the greatest gifts of all. Should you wish to bless us with a monetary gift, you may send it via <strong>GCash</strong>:
+      </p>
+
+      <!-- GCASH CARD -->
+      <div class="gcash-card">
+        <div class="gcash-badge">GCash Mobile Wallet</div>
+        <div class="gcash-number-display" id="modal-gcash-number">0917-123-4567</div>
+        <div class="gcash-name-display" id="modal-gcash-name">Mailyn Bio / Roel Barrameda</div>
+        <button class="gcash-copy-btn" id="btn-copy-gcash">
+          📋 Copy GCash Number
+        </button>
+      </div>
+
+      <p style="font-size: 0.75rem; color: var(--text-secondary); font-style: italic; margin-top: 10px;">
+        Tap "Copy GCash Number" and paste it in your GCash app to send your blessing. Thank you with all our hearts!
+      </p>
+
+      <button class="btn-outline" id="btn-gift-done" style="margin-top: 16px;">Close</button>
+    </div>
+  </div>
 
   <!-- 5x7 PRINT MODAL -->
   <div class="modal-overlay" id="card-preview-overlay">
@@ -771,21 +926,23 @@
       </div>
 
       <div class="invitation-card-5x7">
-        <div style="font-family:var(--font-title); font-size:1.1rem; color:var(--accent); letter-spacing:0.2em;" id="card-monogram">S &bull; A</div>
+        <div style="font-family:var(--font-title); font-size:1.1rem; color:var(--accent); letter-spacing:0.2em;" id="card-monogram">M &bull; R</div>
         <div style="font-family:var(--font-sans); font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-secondary);">Together with their families</div>
         <div style="font-family:var(--font-script); font-size:3.2rem; line-height:1.1;">
-          <span id="card-bride">Sarah Elizabeth</span><br>
+          <span id="card-bride">Mailyn Bio</span><br>
           <span style="font-family:var(--font-serif); font-size:1.6rem; color:var(--accent);">&amp;</span><br>
-          <span id="card-groom">Alexander James</span>
+          <span id="card-groom">Roel Barrameda</span>
         </div>
         <p style="font-style:italic; font-size:0.95rem; color:var(--text-secondary);">request the honour of your presence at their wedding celebration</p>
         <div style="border-top:1px solid var(--border-subtle); border-bottom:1px solid var(--border-subtle); padding:6px 0;">
           <div style="font-family:var(--font-title); font-size:1.1rem; letter-spacing:0.15em;" id="card-date">Saturday, October 24, 2026</div>
-          <div style="font-family:var(--font-sans); font-size:0.7rem; color:var(--text-secondary);" id="card-time">at Four O'Clock in the Afternoon</div>
+          <div style="font-family:var(--font-sans); font-size:0.7rem; color:var(--text-secondary);" id="card-time">at Three O'Clock in the Afternoon</div>
         </div>
         <div>
-          <div style="font-family:var(--font-serif); font-size:1.15rem; font-weight:600;" id="card-venue">The Glasshouse Estate</div>
-          <div style="font-family:var(--font-sans); font-size:0.65rem; text-transform:uppercase; color:var(--text-secondary);" id="card-address">Napa Valley, California</div>
+          <div style="font-family:var(--font-sans); font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent);">Ceremony</div>
+          <div style="font-family:var(--font-serif); font-size:1.1rem; font-weight:600;" id="card-church">San Vicente Ferrer Parish</div>
+          <div style="font-family:var(--font-sans); font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); margin-top:4px;">Reception</div>
+          <div style="font-family:var(--font-serif); font-size:1.1rem; font-weight:600;" id="card-venue">Casa Ver'Amore</div>
         </div>
         <div style="font-family:var(--font-sans); font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--accent);" id="card-reception-note">Dinner &amp; Dancing to Follow &bull; Formal Attire</div>
       </div>
@@ -802,7 +959,7 @@
       <form id="rsvp-form">
         <div class="form-group">
           <label>Full Name(s) *</label>
-          <input type="text" id="rsvp-name" class="form-control" placeholder="e.g. Eleanor & Thomas Vance" required>
+          <input type="text" id="rsvp-name" class="form-control" placeholder="e.g. Maria & Juan Santos" required>
         </div>
         <div class="form-group">
           <label>Email Address *</label>
@@ -825,15 +982,15 @@
           </select>
         </div>
         <div class="form-group">
-          <label>Dietary Restrictions / Note</label>
-          <input type="text" id="rsvp-dietary" class="form-control" placeholder="e.g. Vegetarian, Gluten-free, or a warm wish">
+          <label>Message</label>
+          <textarea id="rsvp-message" class="form-control" rows="3" placeholder="Leave a message or warm wishes for Mailyn & Roel..."></textarea>
         </div>
         <button type="submit" class="btn-luxury" style="width:100%; justify-content:center; margin-top:12px;">Submit RSVP</button>
       </form>
 
       <div id="rsvp-success-message" style="display:none; text-align:center; padding:24px 10px;">
         <h3 style="font-family:var(--font-title); font-size:1.2rem; margin-bottom:6px;">Thank You!</h3>
-        <p style="color:var(--text-secondary); font-size:0.9rem;">Your RSVP has been saved. We can't wait to celebrate with you!</p>
+        <p style="color:var(--text-secondary); font-size:0.9rem;">Your RSVP has been saved. Mailyn &amp; Roel cannot wait to celebrate with you!</p>
         <button class="btn-outline" id="btn-rsvp-done" style="margin-top:16px;">Close</button>
       </div>
     </div>
@@ -846,18 +1003,24 @@
       <button class="modal-close" id="btn-close-customizer" style="position:static;">&times;</button>
     </div>
     <div class="customizer-body">
-      <div class="form-group"><label>Bride's Name</label><input type="text" id="edit-bride" class="form-control" value="Sarah Elizabeth Chen"></div>
-      <div class="form-group"><label>Groom's Name</label><input type="text" id="edit-groom" class="form-control" value="Alexander James Ward"></div>
-      <div class="form-group"><label>Monogram</label><input type="text" id="edit-monogram" class="form-control" value="S & A" maxlength="6"></div>
+      <div class="form-group"><label>Bride's Name</label><input type="text" id="edit-bride" class="form-control" value="Mailyn Bio"></div>
+      <div class="form-group"><label>Groom's Name</label><input type="text" id="edit-groom" class="form-control" value="Roel Barrameda"></div>
+      <div class="form-group"><label>Monogram</label><input type="text" id="edit-monogram" class="form-control" value="M & R" maxlength="6"></div>
       <div class="form-group"><label>Wedding Date (YYYY-MM-DD)</label><input type="date" id="edit-date-iso" class="form-control" value="2026-10-24"></div>
       <div class="form-group"><label>Display Date Text</label><input type="text" id="edit-date-text" class="form-control" value="Saturday, October 24, 2026"></div>
-      <div class="form-group"><label>Display Time Text</label><input type="text" id="edit-time-text" class="form-control" value="at Four O'Clock in the Afternoon"></div>
-      <div class="form-group"><label>Venue Name</label><input type="text" id="edit-venue" class="form-control" value="The Glasshouse Estate"></div>
-      <div class="form-group"><label>City / Region</label><input type="text" id="edit-city" class="form-control" value="Napa Valley, California"></div>
-      <div class="form-group"><label>Dress Code</label><input type="text" id="edit-dress-code" class="form-control" value="Black Tie Optional"></div>
+      <div class="form-group"><label>Display Time Text</label><input type="text" id="edit-time-text" class="form-control" value="at Three O'Clock in the Afternoon"></div>
+      <div class="form-group"><label>Church Ceremony</label><input type="text" id="edit-church" class="form-control" value="San Vicente Ferrer Parish"></div>
+      <div class="form-group"><label>Reception Venue</label><input type="text" id="edit-venue" class="form-control" value="Casa Ver'Amore"></div>
+      <div class="form-group"><label>Dress Code</label><input type="text" id="edit-dress-code" class="form-control" value="Formal / Semi-Formal"></div>
       <div class="form-group"><label>RSVP Deadline</label><input type="text" id="edit-rsvp-deadline" class="form-control" value="September 15, 2026"></div>
       
-      <div style="margin-top:20px; padding:12px; background:var(--bg-surface); border-radius:4px; font-size:0.75rem;">
+      <div style="border-top:1px solid var(--border-subtle); margin:18px 0 14px; padding-top:12px;">
+        <label style="font-weight:600; color:var(--accent); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.15em; display:block; margin-bottom:10px;">GCash Gift Settings</label>
+        <div class="form-group"><label>GCash Number</label><input type="text" id="edit-gcash-number" class="form-control" value="0917-123-4567"></div>
+        <div class="form-group"><label>GCash Account Name</label><input type="text" id="edit-gcash-name" class="form-control" value="Mailyn Bio / Roel Barrameda"></div>
+      </div>
+
+      <div style="margin-top:14px; padding:12px; background:var(--bg-surface); border-radius:4px; font-size:0.75rem;">
         <div>Attending: <strong id="admin-count-attending">0</strong> | Declined: <strong id="admin-count-declined">0</strong></div>
         <button id="btn-export-csv" class="btn-ctrl" style="margin-top:8px; width:100%; justify-content:center;">Export RSVPs to CSV</button>
       </div>
@@ -870,21 +1033,23 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const defaultData = {
-        bride: 'Sarah Elizabeth Chen',
-        groom: 'Alexander James Ward',
-        monogram: 'S & A',
-        dateIso: '2026-10-24T16:00',
+        bride: 'Mailyn Bio',
+        groom: 'Roel Barrameda',
+        monogram: 'M & R',
+        dateIso: '2026-10-24T15:00',
         dateText: 'Saturday, October 24, 2026',
-        timeText: "at Four O'Clock in the Afternoon",
-        venue: 'The Glasshouse Estate',
-        city: 'Napa Valley, California',
-        dressCode: 'Black Tie Optional',
-        rsvpDeadline: 'September 15, 2026'
+        timeText: "at Three O'Clock in the Afternoon",
+        church: 'San Vicente Ferrer Parish',
+        venue: "Casa Ver'Amore",
+        dressCode: 'Formal / Semi-Formal',
+        rsvpDeadline: 'September 15, 2026',
+        gcashNumber: '0917-123-4567',
+        gcashName: 'Mailyn Bio / Roel Barrameda'
       };
 
       let weddingData = Object.assign({}, defaultData);
       try {
-        const saved = localStorage.getItem('wedding_data');
+        const saved = localStorage.getItem('wedding_data_mr');
         if (saved) weddingData = Object.assign(weddingData, JSON.parse(saved));
       } catch (e) {}
 
@@ -908,52 +1073,48 @@
         document.getElementById('card-date').textContent = weddingData.dateText;
         document.getElementById('display-wedding-time').textContent = weddingData.timeText;
         document.getElementById('card-time').textContent = weddingData.timeText;
+
+        document.getElementById('display-church-name').textContent = weddingData.church;
+        document.getElementById('card-church').textContent = weddingData.church;
+        document.getElementById('card-display-church').textContent = weddingData.church;
+        document.getElementById('timeline-church').textContent = `${weddingData.church}. Please arrive and be seated early.`;
+
         document.getElementById('display-venue-name').textContent = weddingData.venue;
         document.getElementById('card-venue').textContent = weddingData.venue;
         document.getElementById('card-display-venue').textContent = weddingData.venue;
-        document.getElementById('display-venue-city').textContent = weddingData.city;
-        document.getElementById('card-address').textContent = weddingData.city;
-        document.getElementById('card-display-city').textContent = weddingData.city;
+        document.getElementById('timeline-venue').textContent = `${weddingData.venue}. Enjoy refreshing drinks and celebration dinner.`;
+
         document.getElementById('display-dress-code').textContent = weddingData.dressCode;
         document.getElementById('card-reception-note').textContent = `Dinner & Dancing to Follow • ${weddingData.dressCode}`;
         document.getElementById('rsvp-modal-deadline').textContent = weddingData.rsvpDeadline;
         document.getElementById('nav-brand-text').innerHTML = `${weddingData.bride.split(' ')[0]} &amp; ${weddingData.groom.split(' ')[0]} &bull; ${weddingData.dateText}`;
         document.getElementById('footer-couple-text').innerHTML = `${weddingData.bride} &amp; ${weddingData.groom} &bull; ${weddingData.dateText}`;
         
+        // GCash displays
+        document.getElementById('modal-gcash-number').textContent = weddingData.gcashNumber || defaultData.gcashNumber;
+        document.getElementById('modal-gcash-name').textContent = weddingData.gcashName || defaultData.gcashName;
+
+        // Customizer inputs
         document.getElementById('edit-bride').value = weddingData.bride;
         document.getElementById('edit-groom').value = weddingData.groom;
         document.getElementById('edit-monogram').value = weddingData.monogram;
         if (weddingData.dateIso) document.getElementById('edit-date-iso').value = weddingData.dateIso.slice(0, 10);
         document.getElementById('edit-date-text').value = weddingData.dateText;
         document.getElementById('edit-time-text').value = weddingData.timeText;
+        document.getElementById('edit-church').value = weddingData.church;
         document.getElementById('edit-venue').value = weddingData.venue;
-        document.getElementById('edit-city').value = weddingData.city;
         document.getElementById('edit-dress-code').value = weddingData.dressCode;
         document.getElementById('edit-rsvp-deadline').value = weddingData.rsvpDeadline;
+        document.getElementById('edit-gcash-number').value = weddingData.gcashNumber || defaultData.gcashNumber;
+        document.getElementById('edit-gcash-name').value = weddingData.gcashName || defaultData.gcashName;
 
-        // Calendar links
-        const title = encodeURIComponent(`Wedding: ${weddingData.bride} & ${weddingData.groom}`);
-        const loc = encodeURIComponent(`${weddingData.venue}, ${weddingData.city}`);
-        const start = new Date(weddingData.dateIso || '2026-10-24T16:00').toISOString().replace(/-|:|\.\d+/g, '');
-        const end = new Date(new Date(weddingData.dateIso || '2026-10-24T16:00').getTime() + 7*3600000).toISOString().replace(/-|:|\.\d+/g, '');
-        document.getElementById('cal-google').href = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${start}/${end}&location=${loc}`;
-        
-        document.getElementById('cal-ics').onclick = (e) => {
-          e.preventDefault();
-          const ics = `BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nSUMMARY:Wedding: ${weddingData.bride} & ${weddingData.groom}\r\nLOCATION:${weddingData.venue}, ${weddingData.city}\r\nDTSTART:${start}\r\nDTEND:${end}\r\nEND:VEVENT\r\nEND:VCALENDAR`;
-          const blob = new Blob([ics], { type: 'text/calendar' });
-          const a = document.createElement('a');
-          a.href = URL.createObjectURL(blob);
-          a.download = 'wedding-invite.ics';
-          a.click();
-        };
-
-        const mapLink = document.getElementById('link-map-directions');
-        if (mapLink) mapLink.href = `https://maps.google.com/?q=${encodeURIComponent(weddingData.venue + ' ' + weddingData.city)}`;
+        // Map Links
+        document.getElementById('link-map-church').href = `https://maps.google.com/?q=${encodeURIComponent(weddingData.church)}`;
+        document.getElementById('link-map-venue').href = `https://maps.google.com/?q=${encodeURIComponent(weddingData.venue)}`;
       }
 
       function saveData() {
-        try { localStorage.setItem('wedding_data', JSON.stringify(weddingData)); } catch(e) {}
+        try { localStorage.setItem('wedding_data_mr', JSON.stringify(weddingData)); } catch(e) {}
       }
 
       // Input listeners
@@ -969,12 +1130,15 @@
       bindInput('edit-monogram', 'monogram');
       bindInput('edit-date-text', 'dateText');
       bindInput('edit-time-text', 'timeText');
+      bindInput('edit-church', 'church');
       bindInput('edit-venue', 'venue');
-      bindInput('edit-city', 'city');
       bindInput('edit-dress-code', 'dressCode');
       bindInput('edit-rsvp-deadline', 'rsvpDeadline');
+      bindInput('edit-gcash-number', 'gcashNumber');
+      bindInput('edit-gcash-name', 'gcashName');
+
       document.getElementById('edit-date-iso').addEventListener('change', (e) => {
-        weddingData.dateIso = `${e.target.value}T16:00`;
+        weddingData.dateIso = `${e.target.value}T15:00`;
         saveData();
       });
 
@@ -988,7 +1152,7 @@
 
       // Countdown
       setInterval(() => {
-        const diff = new Date(weddingData.dateIso || '2026-10-24T16:00').getTime() - new Date().getTime();
+        const diff = new Date(weddingData.dateIso || '2026-10-24T15:00').getTime() - new Date().getTime();
         if (diff > 0) {
           document.getElementById('cd-days').textContent = String(Math.floor(diff / (86400000))).padStart(2, '0');
           document.getElementById('cd-hours').textContent = String(Math.floor((diff % 86400000) / 3600000)).padStart(2, '0');
@@ -1009,9 +1173,43 @@
       document.getElementById('btn-toggle-crop-marks').addEventListener('click', () => cardModal.classList.toggle('crop-marks'));
       document.getElementById('btn-trigger-print').addEventListener('click', () => window.print());
 
+      // GCash Gift Modal
+      const giftModal = document.getElementById('gift-modal-overlay');
+      const openGiftModal = () => giftModal.classList.add('show');
+      const closeGiftModal = () => giftModal.classList.remove('show');
+      document.getElementById('btn-open-gift').addEventListener('click', openGiftModal);
+      const cardGiftBtn = document.getElementById('btn-card-gift');
+      if (cardGiftBtn) cardGiftBtn.addEventListener('click', openGiftModal);
+      document.getElementById('btn-close-gift').addEventListener('click', closeGiftModal);
+      document.getElementById('btn-gift-done').addEventListener('click', closeGiftModal);
+      giftModal.addEventListener('click', (e) => { if (e.target === giftModal) closeGiftModal(); });
+
+      // Copy GCash Number button
+      document.getElementById('btn-copy-gcash').addEventListener('click', () => {
+        const rawNum = (weddingData.gcashNumber || defaultData.gcashNumber).replace(/[^0-9]/g, '');
+        navigator.clipboard.writeText(rawNum || weddingData.gcashNumber).then(() => {
+          const btn = document.getElementById('btn-copy-gcash');
+          const originalText = btn.textContent;
+          btn.textContent = '✅ Copied to Clipboard!';
+          btn.style.background = '#22c55e';
+          btn.style.color = '#ffffff';
+          setTimeout(() => {
+            btn.textContent = originalText;
+            btn.style.background = '#ffffff';
+            btn.style.color = '#005ce6';
+          }, 2500);
+        }).catch(() => {
+          alert('GCash Number: ' + (weddingData.gcashNumber || defaultData.gcashNumber));
+        });
+      });
+
       // RSVP Modal
       const rsvpModal = document.getElementById('rsvp-modal-overlay');
-      const openRsvp = () => { rsvpModal.classList.add('show'); document.getElementById('rsvp-form').style.display = 'block'; document.getElementById('rsvp-success-message').style.display = 'none'; };
+      const openRsvp = () => { 
+        rsvpModal.classList.add('show'); 
+        document.getElementById('rsvp-form').style.display = 'block'; 
+        document.getElementById('rsvp-success-message').style.display = 'none'; 
+      };
       document.getElementById('btn-open-rsvp').addEventListener('click', openRsvp);
       document.getElementById('btn-floating-rsvp').addEventListener('click', openRsvp);
       document.getElementById('btn-close-rsvp').addEventListener('click', () => rsvpModal.classList.remove('show'));
@@ -1025,13 +1223,13 @@
           email: document.getElementById('rsvp-email').value.trim(),
           attending,
           guests: attending ? document.getElementById('rsvp-guests').value : 0,
-          note: document.getElementById('rsvp-dietary').value.trim(),
+          message: document.getElementById('rsvp-message').value.trim(),
           date: new Date().toLocaleDateString()
         };
         let list = [];
-        try { list = JSON.parse(localStorage.getItem('wedding_rsvps') || '[]'); } catch(e){}
+        try { list = JSON.parse(localStorage.getItem('wedding_rsvps_mr') || '[]'); } catch(e){}
         list.push(item);
-        localStorage.setItem('wedding_rsvps', JSON.stringify(list));
+        localStorage.setItem('wedding_rsvps_mr', JSON.stringify(list));
         document.getElementById('rsvp-form').reset();
         document.getElementById('rsvp-form').style.display = 'none';
         document.getElementById('rsvp-success-message').style.display = 'block';
@@ -1040,7 +1238,7 @@
 
       function updateRsvpCounts() {
         let list = [];
-        try { list = JSON.parse(localStorage.getItem('wedding_rsvps') || '[]'); } catch(e){}
+        try { list = JSON.parse(localStorage.getItem('wedding_rsvps_mr') || '[]'); } catch(e){}
         let att = 0, dec = 0;
         list.forEach(i => i.attending ? att += Number(i.guests||1) : dec++);
         document.getElementById('admin-count-attending').textContent = att;
@@ -1049,16 +1247,16 @@
 
       document.getElementById('btn-export-csv').addEventListener('click', () => {
         let list = [];
-        try { list = JSON.parse(localStorage.getItem('wedding_rsvps') || '[]'); } catch(e){}
+        try { list = JSON.parse(localStorage.getItem('wedding_rsvps_mr') || '[]'); } catch(e){}
         if (!list.length) return alert('No RSVPs to export yet.');
-        let csv = 'Name,Email,Attending,Guests,Note,Date\n' + list.map(i => `"${i.name}","${i.email}",${i.attending?'Yes':'No'},${i.guests},"${i.note}","${i.date}"`).join('\n');
+        let csv = 'Name,Email,Attending,Guests,Message,Date\n' + list.map(i => `"${i.name}","${i.email}",${i.attending?'Yes':'No'},${i.guests},"${i.message}","${i.date}"`).join('\n');
         const a = document.createElement('a');
         a.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
-        a.download = 'rsvps.csv';
+        a.download = 'wedding-rsvps.csv';
         a.click();
       });
 
-      // Ambient Audio Synthesizer
+      // Ambient Audio Synthesizer (Web Audio API)
       let audioCtx = null, audioTimer = null, playing = false;
       const chords = [[277.18, 349.23, 415.3, 554.37], [233.08, 277.18, 349.23, 466.16], [369.99, 466.16, 554.37, 739.99]];
       let cIdx = 0;
